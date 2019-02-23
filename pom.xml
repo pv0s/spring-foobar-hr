@@ -96,8 +96,7 @@
           <version>2.9.8</version>
       </dependency>
 
-      <!-- Add Servlet support for
-           Spring's AbstractAnnotationConfigDispatcherServletInitializer -->
+      <!-- Add Servlet support for Spring's AbstractAnnotationConfigDispatcherServletInitializer -->
       <dependency>
           <groupId>javax.servlet</groupId>
           <artifactId>javax.servlet-api</artifactId>
@@ -114,8 +113,7 @@
 
 		<plugins>
 
-			<!-- Builds a Web Application Archive (WAR) file from the project output 
-				and its dependencies. -->
+			<!-- Builds a Web Application Archive (WAR) file from the project output and its dependencies. -->
 			<plugin>
 				<!-- Add Maven coordinates (GAV) for: maven-war-plugin -->
 				<groupId>org.apache.maven.plugins</groupId>

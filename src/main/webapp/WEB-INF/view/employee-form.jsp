@@ -6,7 +6,8 @@
     <title>Save Employee</title>
 
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css"/>
-    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/add-customer-style.css"/>
+    <link type="text/css" rel="stylesheet"
+          href="${pageContext.request.contextPath}/resources/css/add-customer-style.css"/>
 
 </head>
 <body>
@@ -75,7 +76,7 @@
 </div>
 
 <div style="clear: both;">
-  <p><a href="${pageContext.request.contextPath}/employees/list">Back to list</a></p>
+    <p><a href="${pageContext.request.contextPath}/employees/list">Back to list</a></p>
 </div>
 
 </body>

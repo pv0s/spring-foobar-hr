@@ -13,62 +13,55 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/employees")
-public class EmployeeController
-{
-	@Autowired
-	EmployeeService employeeService;
+public class EmployeeController {
+    @Autowired
+    EmployeeService employeeService;
 
-	@RequestMapping("/list")
-	public String getEmployees(Model theModel)
-	{
-		List<Employee> employeeList = employeeService.getEmployees();
-		theModel.addAttribute("employees", employeeList);
+    @RequestMapping("/list")
+    public String getEmployees(Model theModel) {
+        List<Employee> employeeList = employeeService.getEmployees();
+        theModel.addAttribute("employees", employeeList);
 
-		return "employee-list";
+        return "employee-list";
 
-	}
+    }
 
-	@RequestMapping("/employee")
-	public String getEmployee(@RequestParam("id") int id, Model theModel)
-	{
-		Employee employee = employeeService.getEmployee(id);
-		theModel.addAttribute("employee", employee);
+    @RequestMapping("/employee")
+    public String getEmployee(@RequestParam("id") int id, Model theModel) {
+        Employee employee = employeeService.getEmployee(id);
+        theModel.addAttribute("employee", employee);
 
-		return "employee-form";
+        return "employee-form";
 
-	}
+    }
 
-	@RequestMapping("/showFormForAdd")
-	public String showFormForAdd(Model theModel)
-	{
-		Employee employee = new Employee();
-		theModel.addAttribute("employee", employee);
+    @RequestMapping("/showFormForAdd")
+    public String showFormForAdd(Model theModel) {
+        Employee employee = new Employee();
+        theModel.addAttribute("employee", employee);
 
-		return "employee-form";
-	}
+        return "employee-form";
+    }
 
-	@RequestMapping("/showFormForUpdate")
-	public String showFormForUpdate(@RequestParam("id") int id, Model theModel)
-	{
-		Employee employee = employeeService.getEmployee(id);
-		theModel.addAttribute("employee", employee);
+    @RequestMapping("/showFormForUpdate")
+    public String showFormForUpdate(@RequestParam("id") int id, Model theModel) {
+        Employee employee = employeeService.getEmployee(id);
+        theModel.addAttribute("employee", employee);
 
-		return "employee-form";
-	}
+        return "employee-form";
+    }
 
-	@RequestMapping("/save")
-	public String saveEmployee(@ModelAttribute("employee") Employee employee)
-	{
-		employeeService.saveEmployee(employee);
+    @RequestMapping("/save")
+    public String saveEmployee(@ModelAttribute("employee") Employee employee) {
+        employeeService.saveEmployee(employee);
 
-		return "redirect:/employees/list";
-	}
+        return "redirect:/employees/list";
+    }
 
-	@RequestMapping("/delete")
-	public String deleteEmployee(@RequestParam("id") int id)
-	{
-		employeeService.deleteEmployee(id);
-		return "redirect:/employees/list";
-	}
+    @RequestMapping("/delete")
+    public String deleteEmployee(@RequestParam("id") int id) {
+        employeeService.deleteEmployee(id);
+        return "redirect:/employees/list";
+    }
 
 }

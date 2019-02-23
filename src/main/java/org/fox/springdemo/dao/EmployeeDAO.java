@@ -4,15 +4,14 @@ import org.fox.springdemo.entity.Employee;
 
 import java.util.List;
 
-public interface EmployeeDAO
-{
+public interface EmployeeDAO {
 
-	List<Employee> getEmployees();
+    List<Employee> getEmployees();
 
-	Employee getEmployee(int id);
+    Employee getEmployee(int id);
 
-	void saveEmployee(Employee employee);
+    void saveEmployee(Employee employee);
 
-	void deleteEmployee(int id);
+    void deleteEmployee(int id);
 
 }
